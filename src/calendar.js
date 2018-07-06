@@ -80,6 +80,7 @@ function calendar (calendarOptions) {
     api.restore = napi;
     api.setValue = setValue;
     api.show = show;
+    api.afterRefresh = afterRefresh;
 
     eventListening();
     ready();
@@ -423,6 +424,7 @@ function calendar (calendarOptions) {
     lastMonth = false;
     lastDay = false;
     update(true);
+    api.emit('afterRefresh')
     return api;
   }
 
