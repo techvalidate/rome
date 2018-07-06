@@ -438,7 +438,7 @@ function calendar (calendarOptions) {
     }
     ref = inRange(date) || ref;
     refCal = ref.clone();
-    update(true);
+    update();
 
     return api;
   }
