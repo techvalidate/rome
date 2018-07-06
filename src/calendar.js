@@ -80,7 +80,7 @@ function calendar (calendarOptions) {
     api.restore = napi;
     api.setValue = setValue;
     api.show = show;
-    api.afterRefresh = afterRefresh;
+    api.afterRefresh = napi;
 
     eventListening();
     ready();
@@ -270,6 +270,9 @@ function calendar (calendarOptions) {
     return api;
   }
 
+  function afterRefresh () {
+    return api
+  }
   function hide () {
     hideTimeList();
     setTimeout(hideCalendar, 0);
